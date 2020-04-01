@@ -19,7 +19,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="django-sqs-mq",
-    version="0.0.1",
+    version="0.0.2",
     author="whj",
     author_email="whj@linuxbs.com",
     description="A simple wrapper for boto3 for receive, and sending, to an AWS SQS queue.",
