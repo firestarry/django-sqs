@@ -10,3 +10,4 @@
 @time: 2020/4/2 00:41
 @desc:
 """
+name = "django-sqs-mq"
