@@ -25,6 +25,7 @@ class RuntimeConfig:
         raise ImproperlyConfigured('Missing setting "AWS_DEFAULT_REGION"')
 
     DEFAULTS = {
+        'boto3_retries': 10,
         'queue_name': settings.SQS_QUEUE_NAME,
         'sqs_queue_url': settings.SQS_QUEUE_URL,
         'aws_region_name': settings.AWS_DEFAULT_REGION,
@@ -38,6 +39,10 @@ class RuntimeConfig:
         # priority 0 are defaults
         if key in cls.DEFAULTS:
             return cls.DEFAULTS[key]
+
+    @classmethod
+    def boto3_retry_times(cls):
+        return cls.get_conf_value('boto3_retries')
 
     @classmethod
     def get_sqs_queue_name(cls):
